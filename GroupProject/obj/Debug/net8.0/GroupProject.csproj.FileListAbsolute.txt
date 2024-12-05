@@ -1,0 +1,15 @@
+C:\Users\jrirr\OneDrive\School_CurrentYear\C# Programming\mod 8\Group_Project_3110\GroupProject\bin\Debug\net8.0\GroupProject.exe
+C:\Users\jrirr\OneDrive\School_CurrentYear\C# Programming\mod 8\Group_Project_3110\GroupProject\bin\Debug\net8.0\GroupProject.deps.json
+C:\Users\jrirr\OneDrive\School_CurrentYear\C# Programming\mod 8\Group_Project_3110\GroupProject\bin\Debug\net8.0\GroupProject.runtimeconfig.json
+C:\Users\jrirr\OneDrive\School_CurrentYear\C# Programming\mod 8\Group_Project_3110\GroupProject\bin\Debug\net8.0\GroupProject.dll
+C:\Users\jrirr\OneDrive\School_CurrentYear\C# Programming\mod 8\Group_Project_3110\GroupProject\bin\Debug\net8.0\GroupProject.pdb
+C:\Users\jrirr\OneDrive\School_CurrentYear\C# Programming\mod 8\Group_Project_3110\GroupProject\obj\Debug\net8.0\GroupProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jrirr\OneDrive\School_CurrentYear\C# Programming\mod 8\Group_Project_3110\GroupProject\obj\Debug\net8.0\GroupProject.AssemblyInfoInputs.cache
+C:\Users\jrirr\OneDrive\School_CurrentYear\C# Programming\mod 8\Group_Project_3110\GroupProject\obj\Debug\net8.0\GroupProject.AssemblyInfo.cs
+C:\Users\jrirr\OneDrive\School_CurrentYear\C# Programming\mod 8\Group_Project_3110\GroupProject\obj\Debug\net8.0\GroupProject.csproj.CoreCompileInputs.cache
+C:\Users\jrirr\OneDrive\School_CurrentYear\C# Programming\mod 8\Group_Project_3110\GroupProject\obj\Debug\net8.0\GroupProject.sourcelink.json
+C:\Users\jrirr\OneDrive\School_CurrentYear\C# Programming\mod 8\Group_Project_3110\GroupProject\obj\Debug\net8.0\GroupProject.dll
+C:\Users\jrirr\OneDrive\School_CurrentYear\C# Programming\mod 8\Group_Project_3110\GroupProject\obj\Debug\net8.0\refint\GroupProject.dll
+C:\Users\jrirr\OneDrive\School_CurrentYear\C# Programming\mod 8\Group_Project_3110\GroupProject\obj\Debug\net8.0\GroupProject.pdb
+C:\Users\jrirr\OneDrive\School_CurrentYear\C# Programming\mod 8\Group_Project_3110\GroupProject\obj\Debug\net8.0\GroupProject.genruntimeconfig.cache
+C:\Users\jrirr\OneDrive\School_CurrentYear\C# Programming\mod 8\Group_Project_3110\GroupProject\obj\Debug\net8.0\ref\GroupProject.dll
