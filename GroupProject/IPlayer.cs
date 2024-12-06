@@ -54,9 +54,9 @@ namespace Module8
         public string Result { get; set; }
     
         /// Constructor to initialize the attack result.
-        /// name = playerIndex The index of the player affected by the attack.
-        /// name = attackPosition The position of the attack on the board.
-        /// name = result The outcome of the attack.
+        /// PlayerIndex = playerIndex The index of the player affected by the attack.
+        /// AttackPosition = attackPosition The position of the attack on the board.
+        /// Result = result The outcome of the attack.
         public AttackResult(int playerIndex, string attackPosition, string result)
         {
             PlayerIndex = playerIndex;
