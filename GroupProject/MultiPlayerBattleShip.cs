@@ -69,7 +69,7 @@ namespace Module8
             }
 
             int currentPlayerIndex = 0;
-            while (currentPlayers.Count > 1)
+            while (currentPlayers.Count > 1) 
             {
                 var currentPlayer = currentPlayers[currentPlayerIndex];
 
@@ -168,7 +168,7 @@ namespace Module8
 
         private void DrawGrids()
         {
-            Console.Clear();
+            Console.Clear(); 
             int drawX = 0;
             int drawY = 0;
 
