@@ -40,15 +40,21 @@ public class Player : IPlayer
             switch (result.ResultType)
             {
                 case AttackResultType.Miss:
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("The attack missed!");
+                    Console.ResetColor();
                     break;
         
                 case AttackResultType.Hit:
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("The attack hit a ship!");
+                    Console.ResetColor();
                     break;
         
                 case AttackResultType.Sunk:
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine($"The attack sank a {result.SunkShip}!");
+                    Console.ResetColor();
                     break;
         
                 default:
