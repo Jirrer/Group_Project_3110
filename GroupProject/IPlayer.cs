@@ -52,30 +52,4 @@ namespace Module8
 
         void SetAttackResults(List<AttackResult> results);
     }
-
-    // John (12_7_2024) - I commented this out as it was crashing the program because AttackResult if already defined
-    /// Joshua Pierce           
-    /// Represents the result of an attack in the game.
-    // public class AttackResult
-    // {
-    //     /// The index of the player this attack result applies to.
-    //     public int PlayerIndex { get; set; }
-    
-    //     /// The position on the game board where the attack occurred.
-    //     public string AttackPosition { get; set; }
-    
-    //     /// The outcome of the attack (e.g., "Hit", "Miss").
-    //     public string Result { get; set; }
-    
-    //     /// Constructor to initialize the attack result.
-    //     /// PlayerIndex = playerIndex The index of the player affected by the attack.
-    //     /// AttackPosition = attackPosition The position of the attack on the board.
-    //     /// Result = result The outcome of the attack.
-    //     public AttackResult(int playerIndex, string attackPosition, string result)
-    //     {
-    //         PlayerIndex = playerIndex;
-    //         AttackPosition = attackPosition;
-    //         Result = result;
-    //     }
-    // }
 }
