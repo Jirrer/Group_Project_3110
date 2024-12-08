@@ -1,57 +1,98 @@
 using Module8;
+using System;
+using System.Collections.Generic;
 
-public class Guess {
-    static int gridSize = 8;
+public class Guess
+{
+    private static int gridSize = 8;
+    private static HashSet<Position> guessedPositions = new HashSet<Position>(); // Track all previous guesses
     private Position guess;
-    static GuessDirection lineDirection;
+    private static GuessDirection lineDirection = GuessDirection.North;
 
-    public Guess() { // needs .Hit bool to be updated with set attack for this to work
-        
-        if (!lastGuessHit()) {
+    public Guess()
+    {
+        // Determine the next guess
+        if (!lastGuessHit())
+        {
             this.guess = randomGuess();
-        } else {
+        }
+        else
+        {
             Guess lastGuess = Player.getLastGuess();
             Position currPosition = lastGuess.returnedGuess();
-            
             this.guess = getNewPosition(currPosition);
         }
+
+        // Mark the current guess as used
+        guessedPositions.Add(this.guess);
     }
 
-    private bool lastGuessHit() {
-        if (Player.numGuesses() >= 0) {
+    private bool lastGuessHit()
+    {
+        if (Player.numGuesses() > 0)
+        {
             return Player.getLastGuess().returnedGuess().Hit;
-        } else {return false; }
+        }
+        return false;
     }
 
-
-
-    public Position returnedGuess(){
+    public Position returnedGuess()
+    {
         return this.guess;
-    } 
+    }
 
-    private Position getNewPosition(Position guess){ // add fix for out of bounds
-        int newX = guess.X;
-        int newY = guess.Y;
-        
-        switch (lineDirection) {
-            // case GuessDirection.North: newY = guess.Y + 1; break;
-            // // case GuessDirection.East: newX = guess.X - 1; break;
-            // // case GuessDirection.South: newY = guess.Y - 1; break;
-            // case GuessDirection.West: newY = guess.X + 1; break;
+    private Position getNewPosition(Position current)
+    {
+        int newX = current.X;
+        int newY = current.Y;
 
-            default: break; // fix
+        switch (lineDirection)
+        {
+            case GuessDirection.North:
+                newY = current.Y - 1;
+                break;
+            case GuessDirection.East:
+                newX = current.X + 1;
+                break;
+            case GuessDirection.South:
+                newY = current.Y + 1;
+                break;
+            case GuessDirection.West:
+                newX = current.X - 1;
+                break;
+            default:
+                throw new InvalidOperationException("Invalid direction");
         }
 
-        return new Position(0, 0);
+        // Ensure the new position is within bounds and has not been guessed
+        if (isValidPosition(newX, newY))
+        {
+            return new Position(newX, newY);
+        }
+
+        // If the direction is invalid, fallback to a random guess
+        return randomGuess();
     }
 
-    private Position randomGuess(){ // fix
+    private Position randomGuess()
+    {
         Random random = new Random();
-        // add grid size, add logic for "hot zones", make sure it does not guess already guessed grids
-        int randomCord1 = random.Next(0,gridSize);
-        int randomCord2 = random.Next(0,gridSize);
+        Position newGuess;
 
-        return new Position(randomCord1, randomCord2); // fix
+        // Keep generating random guesses until a valid position is found
+        do
+        {
+            int randomX = random.Next(0, gridSize);
+            int randomY = random.Next(0, gridSize);
+            newGuess = new Position(randomX, randomY);
+        } while (guessedPositions.Contains(newGuess));
+
+        return newGuess;
     }
 
+    private bool isValidPosition(int x, int y)
+    {
+        // Ensure position is within grid boundaries and not already guessed
+        return x >= 0 && x < gridSize && y >= 0 && y < gridSize && !guessedPositions.Contains(new Position(x, y));
+    }
 }
