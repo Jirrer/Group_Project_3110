@@ -30,13 +30,13 @@ namespace Module8
         }
     }
     
-    public class GroupPlayer : IPlayer
+    public class GroupNPlayer : IPlayer
     {
         private string _name;
         private int _index;
         private int _gridSize;
 
-        public GroupPlayer(string name)
+        public GroupNPlayer(string name)
         {
             _name = name;
         }
@@ -79,5 +79,4 @@ namespace Module8
             }
         }
     }
-}
 }
