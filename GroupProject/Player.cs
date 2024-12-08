@@ -33,7 +33,30 @@ public class Player : IPlayer
 
     public void SetAttackResults(List<AttackResult> results) //needs this done for rest of methods to know if the grid has been hit or not
     {
+        foreach (var result in results)
+        {
+            Console.WriteLine($"Player {result.PlayerIndex} attacked position {result.Position}");
         
+            switch (result.ResultType)
+            {
+                case AttackResultType.Miss:
+                    Console.WriteLine("The attack missed!");
+                    break;
+        
+                case AttackResultType.Hit:
+                    Console.WriteLine("The attack hit a ship!");
+                    break;
+        
+                case AttackResultType.Sunk:
+                    Console.WriteLine($"The attack sank a {result.SunkShip}!");
+                    break;
+        
+                default:
+                    Console.WriteLine("Unknown attack result.");
+                    break;
+            }
+        Console.WriteLine();
+        }
     }
 
     public void StartNewGame(int playerIndex, int gridSize, Ships ships) // Not done yet
