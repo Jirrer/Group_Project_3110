@@ -51,7 +51,7 @@ public class Player : IPlayer
                     Console.ResetColor();
                     break;
         
-                case AttackResultType.Sunk:
+                case AttackResultType.Sank:
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine($"The attack sank a {result.SunkShip}!");
                     Console.ResetColor();
