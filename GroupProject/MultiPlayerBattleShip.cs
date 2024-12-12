@@ -135,7 +135,9 @@ namespace Module8
             }
 
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Green; // Added this give some color to Winner text
             Console.WriteLine("Winner is '" + currentPlayers[0].Name + "'");
+            Console.ResetColor();
             Console.WriteLine();
 
             ConsoleKeyInfo cki;
