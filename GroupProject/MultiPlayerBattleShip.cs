@@ -92,10 +92,26 @@ namespace Module8
                 Console.WriteLine("\nResults:");
                 foreach (var result in results)
                 {
-                    Console.Write("    Player " + result.PlayerIndex + " " + result.ResultType);
-                    if (result.ResultType == AttackResultType.Sank)
+                    Console.Write("    Player " + result.PlayerIndex + " ");
+
+                    // Color "Miss" red, "Hit" green, and "Sank" yellow
+                    if (result.ResultType == AttackResultType.Miss)
                     {
-                        Console.Write(" - " + result.SunkShip);
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write(result.ResultType);
+                        Console.ResetColor();   
+                    } 
+                    else if (result.ResultType == AttackResultType.Hit)
+                    {
+                        Console.ForegroundColor= ConsoleColor.Green;
+                        Console.Write(result.ResultType);
+                        Console.ResetColor();
+                    }
+                    else if (result.ResultType == AttackResultType.Sank)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Write(" - Their " + result.SunkShip + " Sank");
+                        Console.ResetColor();
                     }
                     Console.WriteLine();
                 }
@@ -134,8 +150,9 @@ namespace Module8
                 }
             }
 
+            // Joshua: Added to give green color to Winner text
             Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Green; // Added this give some color to Winner text
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Winner is '" + currentPlayers[0].Name + "'");
             Console.ResetColor();
             Console.WriteLine();
