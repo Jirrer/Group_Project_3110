@@ -39,8 +39,6 @@ namespace Module8
 
 
 
-
-
         /// <summary>
         /// The game will notify you of the results of each attack. 
         /// </summary>
@@ -51,5 +49,7 @@ namespace Module8
 
 
         void SetAttackResults(List<AttackResult> results);
+
+        string winPercentage();
     }
 }

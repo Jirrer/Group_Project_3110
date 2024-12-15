@@ -42,6 +42,31 @@ namespace Module8
             // DumbPlayer does nothing with these results - its going to keep making dumb guesses
         }
 
+        public string winPercentage() {
+        Grid grid = MultiPlayerBattleShip.getGrid(Index);
+        if (grid == null)
+            return "Grid not found.";
+
+        int totalCells = 0;
+        int hitCells = 0;
+
+        for (int x = 0; x < grid.GridSize; x++) 
+        {
+            for (int y = 0; y < grid.GridSize; y++)
+            {
+                totalCells++;
+                if (grid.GetEntry(x, y).Hit) 
+                {
+                    hitCells++;
+                }
+            }
+        }
+
+        double percentage = totalCells > 0 ? (hitCells / (double)totalCells) * 100 : 0;
+
+        return $"Win Percentage: {percentage:0.00}% ({hitCells}/{totalCells} cells hit)";
+    }
+
         public string Name { get; }
         public int Index => _index;
     }

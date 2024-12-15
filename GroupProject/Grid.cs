@@ -20,6 +20,7 @@ namespace Module8
                 }
             }
         }
+        public int GridSize => _gridSize;
 
         public void Add(Ships ships)
         {
@@ -81,6 +82,14 @@ namespace Module8
         public void Attack(Position pos)
         {
             _grid[pos.X, pos.Y].Hit = true;
+        }
+
+        public GridEntry GetEntry(int x, int y) {
+            if (x < 0 || x >= _gridSize || y < 0 || y >= _gridSize) {
+                throw new ArgumentOutOfRangeException("The provided coordinates are outside the grid boundaries.");
+            }
+
+            return _grid[x, y];
         }
     }
 }

@@ -9,13 +9,19 @@ namespace Module8
 {
     internal class MultiPlayerBattleShip
     {
+        static int numShips;
+
         const int GridSize = 10-2; // Your player should work when GridSize >=8
 
         private static readonly Random Random = new Random();
         private readonly List<IPlayer> _players;
-        private List<Grid> _playerGrids;
+        static private List<Grid> _playerGrids;
         private List<Ships> _playerShips;
         private List<IPlayer> currentPlayers;
+
+        static public Grid getGrid(int gridIndex) {
+            return _playerGrids[gridIndex];
+        }
 
         public MultiPlayerBattleShip(List<IPlayer> players)
         {
@@ -51,6 +57,10 @@ namespace Module8
                 ships.Add(new Battleship());
 
                 var count = ships._ships.Count();
+
+                numShips = count;
+
+
                 int totalLength = ships._ships.Sum(ship => ship.Length);
 
                 currentPlayers[i].StartNewGame(i, GridSize, ships);
@@ -87,7 +97,8 @@ namespace Module8
 
                 DrawGrids();
 
-                Console.WriteLine("\nPlayer " + currentPlayer.Index + "[" + currentPlayer.Name + "]  turn.");
+                Console.WriteLine("\nPlayer " + currentPlayer.Index + "[" + currentPlayer.Name + "] turn.");
+                Console.WriteLine(currentPlayer.winPercentage());
                 Console.WriteLine("    Attack: " + pos.X + "," + pos.Y);
                 Console.WriteLine("\nResults:");
                 foreach (var result in results)
@@ -184,6 +195,8 @@ namespace Module8
             }
             return results;
         }
+
+      
 
         private void DrawGrids()
         {
